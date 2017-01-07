@@ -1,7 +1,7 @@
 // Michael Wilson
 // CSS 343
 // The point of this file is to help me adapt to the C++ language more
-// & solidfy my knowledge of the material covered in Cormen, Leiserson,
+// & solidify my knowledge of the material covered in Cormen, Leiserson,
 // Rivest, & Stein's Introduction to Algorithms book 
 
 // PROBLEMS COVERED 
