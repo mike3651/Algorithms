@@ -1,5 +1,5 @@
 // Michael Wilson
-// CSS 343
+// ALGORITHMS IN C++
 // The point of this file is to help me adapt to the C++ language more
 // & solidify my knowledge of the material covered in Cormen, Leiserson,
 // Rivest, & Stein's Introduction to Algorithms book 
@@ -83,10 +83,24 @@ void printArray(int array[], int size) {
 /** Prints out the contents of an array
  * @pre Vector is valid
  * @param vect The vector to print */
- void printVector(vector<int> vect) {
+void printVector(vector<int> vect) {
  	for(int i = 0; i < vect.size(); i++)
  		cout << vect[i] << " ";
- }
+ 	cout << endl;
+}
+
+// WANT TO MAKE A PRINT ANY TYPE FUNCTION
+// AT THE MOMENT THIS IS THE KIND OF THING THAT I WANT TO DO
+// template<typename dataStruct>
+// void printALL(const dataStruct &, int size){
+// 	for(int i = 0; i < size; i++) {
+// 		if(typeid(&) == array || typeid(&) == vector<T>)
+// 			cout << &[i] << " ";
+// 		else 
+// 			// handle other structures
+// 	}
+// 	cout << endl;
+// }
 
 int main() {
 	insertionSortInteract();
