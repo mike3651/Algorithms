@@ -1,5 +1,13 @@
 // Michael Wilson
 // CSS 343
+// The point of this file is to help me adapt to the C++ language more
+// & solidfy my knowledge of the material covered in Cormen, Leiserson,
+// Rivest, & Stein's Introduction to Algorithms book 
+
+// PROBLEMS COVERED 
+	// 2.1.1
+	// 2.1.2
+	// 2.1.3
 
 #include <iostream> 
 #include <string.h>	// includes the strings needed for C++
@@ -80,7 +88,7 @@ void printArray(int array[], int size) {
  }
 
 int main() {
-	// insertionSortInteract();
+	// 	insertionSortInteract();
 	badSearch();
 }
 
