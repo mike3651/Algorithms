@@ -33,21 +33,32 @@ int linearSearch(vector<int> vect, int v) {
 	return -1;
 }
 
+/** Sorts an array with insertion sort
+ * @pre Array is valid
+ * @post Array is sorted
+ * @param array[] The array to be sorted
+ * @param size The size of the of array */
+void insertionSort(int array[], int size, string choice) {
+	for(int i = 1; i < size; i++) {
+		int key = array[i];
+		int j = i - 1;		
+		bool condition = choice == "increasing" ? array[j] > key : array[j] < key;
+		while(j >= 0 && condition) {
+			array[j + 1] = array[j];
+			j -= 1;
+			condition = choice == "increasing" ? array[j] > key : array[j] < key;
+		}
+		array[j + 1] = key;
+	}
+}
+
 /** Sorts an array in non decreasing order
  * @pre Array is valid
  * @post Array is sorted
  * @param array[] The array to be sorted
  * @param size The size of the of array */
 void insertionSortIncreasing(int array[], int size) {
-	for(int i = 1; i < size; i++) {
-		int value = array[i];
-		int j = i - 1;
-		while(j >= 0 && array[j] > value) {
-			array[j + 1] = array[j];
-			j = j - 1;		
-		}
-		array[j + 1] = value;
-	}
+	insertionSort(array, size, "increasing");
 }
 
 /** Sorts an array in non increasing order
@@ -56,18 +67,8 @@ void insertionSortIncreasing(int array[], int size) {
  * @param array[] The array to be sorted
  * @param size The size of the of array */
 void insertionSortDecreasing(int array[], int size) {
-	for(int i = 1; i < size; i++) {
-		int key = array[i];
-		int j = i - 1;
-		while(j >= 0 && array[j] < key) {
-			array[j + 1] = array[j];
-			j -= 1;
-		}
-		array[j + 1] = key;
-	}
+	insertionSort(array, size, "decreasing");
 }
-
-
 
 /** Prints out the contents of an array
  * @pre Array is valid 
@@ -88,8 +89,8 @@ void printArray(int array[], int size) {
  }
 
 int main() {
-	// 	insertionSortInteract();
-	badSearch();
+	insertionSortInteract();
+	// badSearch();
 }
 
 /** Method that goes through the process of asking the user for values to insert for a bad search */
