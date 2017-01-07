@@ -52,24 +52,6 @@ void insertionSort(int array[], int size, string choice) {
 	}
 }
 
-/** Sorts an array in non decreasing order
- * @pre Array is valid
- * @post Array is sorted
- * @param array[] The array to be sorted
- * @param size The size of the of array */
-void insertionSortIncreasing(int array[], int size) {
-	insertionSort(array, size, "increasing");
-}
-
-/** Sorts an array in non increasing order
- * @pre Array is valid
- * @post Array is sorted
- * @param array[] The array to be sorted
- * @param size The size of the of array */
-void insertionSortDecreasing(int array[], int size) {
-	insertionSort(array, size, "decreasing");
-}
-
 /** Prints out the contents of an array
  * @pre Array is valid 
  * @param array[] The array to print
@@ -140,8 +122,7 @@ void insertionSortInteract() {
 	printArray(test, size);
 	
 	// conditions used to handle the input response
-	if(response == "increasing") insertionSortIncreasing(test, size);
-	else if(response == "decreasing") insertionSortDecreasing(test, size);
+	if(response == "increasing" || response == "decreasing") insertionSort(test, size, response);	
 	else {cout << "FAILED TO COMPUTE!!!!" << endl; exit(EXIT_FAILURE); }
 	
 	cout << "Array after insertion sort" << endl;
