@@ -28,8 +28,7 @@ void badSearch();
  * @param vect The vector to search through
  * @param v The value to search for */
 int linearSearch(vector<int> vect, int v) {
-	for(int i = 0; i < vect.size(); i++)
-		if(vect[i] == v) return i;
+	for(int i = 0; i < vect.size(); i++) if(vect[i] == v) return i;	
 	return -1;
 }
 
@@ -85,8 +84,8 @@ void printVector(vector<int> vect) {
 // }
 
 int main() {
-	insertionSortInteract();
-	// badSearch();
+	// insertionSortInteract();
+	badSearch();
 }
 
 /** Method that goes through the process of asking the user for values to insert for a bad search */
@@ -105,8 +104,9 @@ void badSearch() {
 
 	cout << "What is the number that you want to search for? ";	
 	cin >> v;
-	string phrase = linearSearch(myVector, v) == -1 ? "can't seem to find it" : "we found it!";
-	cout << phrase << endl;
+	int value = linearSearch(myVector, v);
+	string phrase = value == -1 ? "can't seem to find it" : "we found it!";
+	cout << phrase << "\nReturn index: " << value << endl;
 }
 
 /** Asks the user what sort of insertion sort algorithm they would like to use */
